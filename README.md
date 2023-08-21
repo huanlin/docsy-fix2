@@ -78,7 +78,7 @@ That means success. Your website is now running locally.
 This project is built with the following steps:
 
 1. Copy from the official Docsy Example repository, then clone it into a local directory, e.g. `d:/work/docsy-example-standlone`. Let's call it the work folder.
-2. From the work folder, run `'npm install`, remove `node_modules/` from `.gitignore`, then commit and push to GitHub. Without `node_modules` committed to the repo, it won't work in my work environment.
+2. From the work folder, run `npm install`, remove `node_modules/` from `.gitignore`, then commit and push to GitHub. Without `node_modules` committed to the repo, it won't work in my work environment.
 3. Create a `themes` folder under the work folder.
 4. Download [Docsy](https://github.com/google/docsy) as a ZIP file, and extract files to `themes/docsy` folder. Git commit and push.
 5. Download [bootstrap](https://github.com/twbs/bootstrap) as a ZIP file, and extract files to `themes/bootstrap` folder. Git commit and push.
@@ -104,11 +104,11 @@ Replace them with:
     path = "docsy"
     disable = false
   [[module.imports]]
-    path = "dependencies"
+    path = "docsy/dependencies"
     disable = false
 ```
 
-Then open `themes/docsy/config.toml`, and find the following sections:
+Then open `themes/docsy/config.toml`, find the following sections:
 
 ```toml
 [[module.imports]]
@@ -134,6 +134,5 @@ Replace them with:
 
 That's it.
 
-You can find out more about how to install Hugo for your environment in the 
-[Getting started](https://www.docsy.dev/docs/getting-started/#prerequisites-and-installation) guide.
+You can find out more about how to install Hugo for your environment in the official [Getting started](https://www.docsy.dev/docs/getting-started/#prerequisites-and-installation) guide.
 
