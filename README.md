@@ -4,9 +4,9 @@ This project is derived from the official [Docsy Example](https://github.com/goo
 
 ## What is a Standalone version, and why?
 
-Standalone means this project does not require additional HTTP connections for pulling dependencies from GitHub. For example, bootstrap, FontAwesome and Docsy. This can be useful in a highly secured private network where HTTP connections to GitHub or GitLab are banned. Despite corporates having their own Nexus server, Docsy still needs to pull some dependencies from GitHub. That was the situation I had struggled with. So I created this Standalone version for myself. 
+*Standalone* means this project does not require additional HTTP connections for pulling dependencies from GitHub. For example, bootstrap, FontAwesome and Docsy. This can be useful in a highly secured private network where HTTP connections to GitHub or GitLab are banned. Despite corporates having their own Nexus server, Docsy still needs to pull some dependencies from GitHub. That was the situation I had struggled with. So I created this Standalone version for myself. 
 
-You might find this project useful if you see the following errors while running `hugo server` command:
+You might find this project useful if you're struggling with the following errors while running `hugo server` command:
 
 ```console
 error: unable to access http://github.com/FortAwesome/Font-Awesome...
@@ -67,9 +67,9 @@ Running in Fast Render Mode. For full rebuilds on change: hugo server --disableF
 Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
 ```
 
-That means your website is built successfully and running.
+That means success. Your website is now running locally.
 
-> If the first line is `hugo: downloading modules` instead of `Start building sites`, that means something wrong in the configuration files because Hugo is still trying to download dependencies from GitHub.
+> If the first line is `hugo: downloading modules` instead of `Start building sites`, that means something wrong in the configuration files and Hugo is still trying to download dependencies from GitHub, which shouldn't happen.
 
 ## How this project is built?
 
