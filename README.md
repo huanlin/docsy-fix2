@@ -15,7 +15,7 @@ error: unable to access http://github.com/google/docsy...
 
 ## How to use this project?
 
-First, clone this repo into your local folder, say `d:/work/docsy-example-standalone`. 
+First, download this repo as a ZIP file and extract it to your local folder, say `d:/work/docsy-example-standalone`. Usually, you will not `git clone` this repo because the network environment does not allow any `git` requests to GitHub, and I think that's why you're here.
 
 Then run `npm install` to see if everything is up-to-date, i.e. no error and nothing needs to download.
 
