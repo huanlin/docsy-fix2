@@ -1,4 +1,12 @@
-# Docsy Example
+# Docsy Example - Standalone version
+
+This project is derived from the official [Docsy Example](https://github.com/google/docsy-example) repository, and it can be used as a template as well.
+
+## What is a Standalone version, and why?
+
+Standalone means this project does not require additional HTTP connections for pulling dependencies from GitHub. For example, bootstrap, FontAwesome and Docsy. This can be useful in a highly secured private network where HTTP connections to GitHub or GitLab are banned. Despite corporates having their own Nexus server, Docsy still needs to pull some dependencies from GitHub. That was the situation I had struggled with.
+
+So I created this Standalone version of Docsy example
 
 [Docsy][] is a [Hugo theme module][] for technical documentation sites, providing easy
 site navigation, structure, and more. This **Docsy Example Project** uses the Docsy
