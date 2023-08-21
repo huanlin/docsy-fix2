@@ -231,5 +231,5 @@ enable = false
     path = "docsy"
     disable = false
   [[module.imports]]
-    path = "dependencies"
+    path = "docsy/dependencies"
     disable = false
