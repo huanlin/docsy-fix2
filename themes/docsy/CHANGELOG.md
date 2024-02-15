@@ -1,5 +1,5 @@
 <!--
-  cSpell:ignore deining docsy gtag lookandfeel navs
+  cSpell:ignore deining docsy gitmodules gtag lookandfeel mhchem navs tabpane
 -->
 
 # Changelog
@@ -11,16 +11,78 @@ notes][releases].
 Useful links:
 
 - [Releases] & [tags]. Jump to the [latest] release.
-- [23Q4] milestone
+- [Milestones]
 
-[23q4]: https://github.com/google/docsy/milestone/9
 [latest]: https://github.com/google/docsy/releases/latest
+[milestones]: https://github.com/google/docsy/milestones
 [releases]: https://github.com/google/docsy/releases
 [tags]: https://github.com/google/docsy/tags
 
+## 0.9.0
+
+For an introduction and commentary, see the [0.9.0 release report]. For the full
+list of commits, see the [0.9.0] release notes. The most significant changes of
+this release are listed next.
+
+**Breaking changes**:
+
+- **[Repository Links]** now work for [multi-language] sites ([#1744]).
+
+  For any given page, repository links are now computed from a page's _resolved_
+  `File` path &mdash; as resolved _through_ mount points, if any. That is, the
+  path used is the one that refers to the file's actual location on disk, not
+  it's logical path in Hugo's [union file system].
+
+  This is a breaking change for pages of sites that use mounts and
+  [path_base_for_github_subdir]. Projects will need to adjust the value of
+  [path_base_for_github_subdir] to be relative to the file's physical location.
+
+- Class names to disable [repository links] were misnamed with a suffix of the
+  form `--KIND`. The new suffix is `__KIND`. For details, see [Disabling links].
+
+- **Heading self-link** support has been reimplemented and projects must now
+  explicitly enable the feature. For details, see [Heading self links].
+
+**Footer changes**: refactoring, for easier customization, and simplification.
+For details concerning all footer changes, see [#1818].
+
+- **Footer layout** has been factored into parts: _left_, _right_, and _center_,
+  with _copyright_ a subpart of center. For details see [Footer layout]
+- **Footer copyright**, supports date-range, and site copyright fallback. For
+  details, see [Footer copyright].
+- **Footer streamlined**: the About-page footer link and All-rights-reserved
+  text are now hidden by default. For details, see [Footer streamlined].
+
+**Other changes**:
+
+- The latest release of **[Mermaid] resources** are now fetched at build time
+  ([#1410]).
+- [Look and feel] updates.
+
+[0.9.0]: https://github.com/google/docsy/releases/latest?FIXME=v0.9.0
+[0.9.0 release report]: https://www.docsy.dev/blog/2024/0.9.0/
+[#1410]: https://github.com/google/docsy/pull/1410
+[#1744]: https://github.com/google/docsy/pull/1744
+[#1818]: https://github.com/google/docsy/pull/1818
+[disabling links]:
+  https://www.docsy.dev/docs/adding-content/repository-links/#disabling-links
+[Footer layout]: https://www.docsy.dev/blog/2024/0.9.0/#footer-layout
+[Footer copyright]: https://www.docsy.dev/blog/2024/0.9.0/#footer-copyright
+[Footer streamlined]: https://www.docsy.dev/blog/2024/0.9.0/#footer-streamlined
+[Heading self links]: https://www.docsy.dev/blog/2024/0.9.0/#heading-self-links
+[look and feel]: https://www.docsy.dev/blog/2024/0.9.0/#look-and-feel
+[mermaid]:
+  https://www.docsy.dev/docs/adding-content/diagrams-and-formulae/#diagrams-with-mermaid
+[multi-language]: https://www.docsy.dev/docs/language/
+[path_base_for_github_subdir]:
+  https://www.docsy.dev/docs/adding-content/repository-links/#path_base_for_github_subdir-optional
+[Repository Links]: https://www.docsy.dev/docs/adding-content/repository-links/
+[union file system]:
+  https://gohugo.io/getting-started/directory-structure/#union-file-system
+
 ## 0.8.0
 
-For the full list of changes, see the [release][0.8.0] notes.
+For the full list of changes, see the [0.8.0] release notes.
 
 **Breaking changes**:
 
@@ -45,7 +107,7 @@ For the full list of changes, see the [release][0.8.0] notes.
 [#1385]: https://github.com/google/docsy/issues/1385
 [#1726]: https://github.com/google/docsy/pull/1726
 [#1727]: https://github.com/google/docsy/pull/1727
-[0.8.0]: https://github.com/google/docsy/releases/latest?fixme=v0.8.0
+[0.8.0]: https://github.com/google/docsy/releases/v0.8.0
 [Docsy NPM install side-effect]:
   https://docsy.dev/docs/get-started/other-options/#docsy-npm-install-side-effect
 [Use Docsy as a Hugo Module]:
@@ -55,7 +117,7 @@ For the full list of changes, see the [release][0.8.0] notes.
 
 ## 0.7.2
 
-For the full list of changes, see the [release][0.7.2] notes. We mention some
+For the full list of changes, see the [0.7.2] release notes. We mention some
 noteworthy changes here:
 
 - **Algolia**
@@ -84,7 +146,7 @@ noteworthy changes here:
 
 ## 0.7.1
 
-For the full list of changes, see the [release][0.7.1] notes.
+For the full list of changes, see the [0.7.1] release notes.
 
 Followup changes to **Bootstrap (BS) 5.2 upgrade** ([#470]):
 
@@ -99,7 +161,7 @@ Followup changes to **Bootstrap (BS) 5.2 upgrade** ([#470]):
 
 ## 0.7.0
 
-For the full list of changes, see the [release][0.7.0] notes.
+For the full list of changes, see the [0.7.0] release notes.
 
 **New**:
 
@@ -123,7 +185,7 @@ For the full list of changes, see the [release][0.7.0] notes.
     extension testing. ([#906])
   - Dropped support for pre-Hugo-0.54.x behavior of `{{% %}}`. ([#939])
   - `blocks/section`: **default** and accepted values of the `type` argument
-    have changed! For details see [blocks/section] ([#1472]).
+    have changed! For details, see [blocks/section] ([#1472]).
   - **Card shortcodes** ([#1376])]:
     - Renamed CSS class `td-card-deck` to `td-card-group`.
     - `card`, `card-code`: markup of inner content (HTML/markdown) now depends
@@ -162,7 +224,7 @@ For the full list of changes, see the [release][0.7.0] notes.
 
 ## 0.6.0
 
-For the full list of changes, see the [release][0.6.0] notes.
+For the full list of changes, see the [0.6.0] release notes.
 
 With this release we declare a feature freeze while we migrate to the newest
 Bootstrap version. See [the announcement][bs-announcement] for more information.
@@ -183,7 +245,7 @@ Bootstrap version. See [the announcement][bs-announcement] for more information.
 
 ## 0.5.1
 
-For the full list of changes, see the [release][0.5.1] notes. **BREAKING
+For the full list of changes, see the [0.5.1] release notes. **BREAKING
 CHANGES** are documented below.
 
 **After you update** your project's Docsy:
@@ -240,7 +302,7 @@ Unpublished.
 
 ## 0.4.0
 
-For the full list of changes, see the [release][0.4.0] notes. Potential
+For the full list of changes, see the [0.4.0] release notes. Potential
 **BREAKING CHANGES** are documented below.
 
 **After you update** your project's Docsy, run `npm install`.
@@ -292,11 +354,11 @@ Proceed as usual to build or serve your site.
 [hugo module]: https://www.docsy.dev/docs/get-started/docsy-as-module/
 [other docsy setups]: https://www.docsy.dev/docs/get-started/other-options/
 [prepare]:
-  https://docs.npmjs.com/cli/v8/using-npm/scripts#prepare-and-prepublish
+  https://docs.npmjs.com/cli/v10/using-npm/scripts#prepare-and-prepublish
 
 ## 0.3.0
 
-For the full list of changes, see the [release][0.3.0] notes.
+For the full list of changes, see the [0.3.0] release notes.
 
 **Breaking changes**:
 
@@ -315,7 +377,7 @@ For the full list of changes, see the [release][0.3.0] notes.
 
 ## 0.2.0
 
-For the full list of changes, see the [release][0.2.0] notes.
+For the full list of changes, see the [0.2.0] release notes.
 
 **New**:
 
@@ -332,11 +394,13 @@ For the full list of changes, see the [release][0.2.0] notes.
 [0.2.0]: https://github.com/google/docsy/releases/v0.2.0
 [hugo modules]: https://gohugo.io/hugo-modules/
 
-<!-- SECTION TEMPLATE ------------------------------------------------------
+<!-- ENTRY TEMPLATE ------------------------------------------------------
 
-## 0.X.Y - next planned release (unpublished yet)
+## 0.X.Y
 
-For the full list of changes, see the [release][0.x.y] notes.
+> ### UNRELEASED: this planned version is still under development
+
+For the full list of changes, see the [0.x.y] release notes.
 
 **Breaking changes**:
 
@@ -346,6 +410,6 @@ For the full list of changes, see the [release][0.x.y] notes.
 
 **Other changes**:
 
-[0.x.y]: https://github.com/google/docsy/releases/v0.X.Y-FIXME
+[0.x.y]: https://github.com/google/docsy/releases/latest?FIXME=v0.X.Y
 
 ---------------------------------------------------------------------------->
