@@ -57,6 +57,8 @@ This is the second section
 Get the Goldydocs app!
 {{% /blocks/feature %}}
 
+{{< bs/icon-grid "features" >}}
+
 {{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
     url="https://github.com/google/docsy-example" %}}
 We do a [Pull Request](https://github.com/google/docsy-example/pulls)
