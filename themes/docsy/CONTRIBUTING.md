@@ -53,12 +53,18 @@ repo.
 3.  **Update Docsy version** to v0.X.Y for:
     - `version` key in [package.json](package.json)
     - `version` key in [userguide/hugo.yaml][]
-4.  Run `npm install` to have vendor assets and [go.mod](go.mod) updated for
-    dependencies.
+4.  Run `npm run ci:prrepare` to ensure that vendor assets and [go.mod](go.mod)
+    dependencies are up-to-date.
 5.  **Submit a PR with your changes**, using a title like "Release v0.X.Y
     preparation".
 6.  **Test the PR** branch from selected sites, and push any required
     adjustments.
+    - If the test site uses Docsy as a Git submodule:
+      ```console
+      $ cd themes/docs
+      $ git fetch
+      $ git switch -t repo/branch-name # e.g. chalin/chalin-im-0.9.1-2024-02-16
+      ```
 7.  **Get PR approved and merged**.
 8.  **Pull in `main`** to get the last PR.
 9.  **Ensure** that you're:
@@ -71,8 +77,8 @@ repo.
     git tag $REL
     ```
 
-11. **Push the new tags** to the main repo, which is named `upstream` in the
-    following example:
+11. **Push the new tags** to the main remote (`origin` or `upstream` depending
+    on your setup) as well as any secondary remotes, if any:
 
     ```console
     $ git push upstream $REL
@@ -93,7 +99,8 @@ repo.
       ```markdown
       ## Release summary
 
-      See, https://github.com/google/docsy/blob/main/CHANGELOG.md#0XY
+      - [Release report](https://www.docsy.dev/blog/2024/0.X.Y/)
+      - [CHANGELOG](https://github.com/google/docsy/blob/main/CHANGELOG.md#0XY)
       ```
 
     - Select **Create a discussion for this release**.
@@ -118,7 +125,7 @@ further changes are merged into the default branch:
    - **Pin the 0.X.Y release URL**, which ends with `latest?FIXME=...`, to the
      v0.X.Y release at `https://github.com/google/docsy/releases/v0.x.y`.
 3. **Submit a PR with your changes**, using a title like "Set NPM package
-   version to next unreleased dev".
+   version to next unreleased dev vers".
 4. **Get PR approved and merged**.
 
 [CHANGELOG]: CHANGELOG.md
