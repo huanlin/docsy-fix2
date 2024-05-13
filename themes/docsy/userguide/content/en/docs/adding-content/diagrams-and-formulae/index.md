@@ -222,7 +222,7 @@ params:
 {{< /tab >}}
 {{< /tabpane >}}
 
-For a complete list of options and their detailed description, have a look at the documentation of \\({\KaTeX}'s\\) [Rendering API options](https://katex.org/docs/autorender.html#api) and of \\({\KaTeX}'s\\) [configuration options](https://katex.org/docs/options.html).
+For a complete list of options and their detailed description, have a look at the documentation of \\({\KaTeX}\\)'s [Rendering API options](https://katex.org/docs/autorender.html#api) and of \\({\KaTeX}\\)'s [configuration options](https://katex.org/docs/options.html).
 
 ### Display of Chemical Equations and Physical Units
 
@@ -388,18 +388,18 @@ By default, docsy pulls in the latest officially released version of Mermaid at 
 {{< tab header="Configuration file:" disabled=true />}}
 {{< tab header="hugo.toml" lang="toml" >}}
 [params.mermaid]
-version = "10.8.0"
+version = "10.9.0"
 {{< /tab >}}
 {{< tab header="hugo.yaml" lang="yaml" >}}
 params:
   mermaid:
-    version: 10.8.0
+    version: 10.9.0
 {{< /tab >}}
 {{< tab header="hugo.json" lang="json" >}}
 {
   "params": {
     "mermaid": {
-      "version": "10.8.0"
+      "version": "10.9.0"
     }
   }
 }
