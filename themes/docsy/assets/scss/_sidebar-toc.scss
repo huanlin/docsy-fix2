@@ -4,7 +4,7 @@
 .td-sidebar-toc {
   @include link-decoration;
 
-  border-left: 1px solid $border-color;
+  border-left: 1px solid var(--bs-border-color);
 
   @supports (position: sticky) {
     position: sticky;
@@ -46,7 +46,7 @@
     }
 
     a {
-      color: $gray-600;
+      color: var(--bs-secondary-color);
 
       &:focus,
       &:hover {
