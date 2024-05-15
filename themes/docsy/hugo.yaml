@@ -47,7 +47,7 @@ module:
     - source: assets/_vendor/bootstrap/scss/
       target: assets/vendor/bootstrap/scss/vendor
   imports:
-    # 2024-05-14 Michael: The beginning slash '/' is required for the local path.
+    # 2024-05-14 Michael: removed "github.com/"
     - path: twbs/bootstrap
       disable: false
       mounts:
@@ -55,7 +55,7 @@ module:
           target: assets/vendor/bootstrap/scss
         - source: dist/js
           target: assets/vendor/bootstrap/dist/js
-    # 2024-05-14 Michael: The beginning slash '/' is required for the local path.
+    # 2024-05-14 Michael: removed "github.com/"
     - path: FortAwesome/Font-Awesome
       disable: false
       mounts:
